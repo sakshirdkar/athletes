@@ -459,7 +459,7 @@ const CreateNewUser = ({ open, setOpen }) => {
 
     try {
       const response = await ky
-        .post(`http://localhost:4000/api/athletes`, {
+        .post(`https://athletes.onrender.com/api/athletes`, {
           body: formData,
         })
         .json();
