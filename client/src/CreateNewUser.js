@@ -4,7 +4,6 @@ import Stepper from "@mui/material/Stepper";
 import Step from "@mui/material/Step";
 import StepLabel from "@mui/material/StepLabel";
 import Button from "@mui/material/Button";
-import Typography from "@mui/material/Typography";
 import ky from "ky";
 
 import {
@@ -53,7 +52,6 @@ const CreateNewUser = ({ open, setOpen }) => {
     address: false,
     checked: false,
   });
-  const [] = useState();
   const [profileImage, setProfileImage] = useState(null);
 
   //By using steps object, it is easy to see that we can  sepaerate the stepper form component from
@@ -282,7 +280,6 @@ const CreateNewUser = ({ open, setOpen }) => {
           <FormControl
             fullWidth
             sx={{ mt: 2 }}
-            sx={{ m: 3 }}
             component="fieldset"
             variant="standard"
           >
@@ -422,7 +419,7 @@ const CreateNewUser = ({ open, setOpen }) => {
   ];
 
   const handleNext = (e) => {
-    if (activeStep == steps.length - 1) {
+    if (activeStep === steps.length - 1) {
       handleSubmit();
       return;
     }

@@ -11,8 +11,6 @@ import {
   CardActions,
   Button,
   CardMedia,
-  Box,
-  Paper,
 } from "@mui/material";
 
 const DisplayProfile = ({ profile }) => {

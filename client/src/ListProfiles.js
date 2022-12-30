@@ -1,11 +1,5 @@
 import React, { useEffect, useState } from "react";
-import {
-  List,
-  ListItem,
-  Skeleton,
-  ListItemAvatar,
-  Avatar,
-} from "@mui/material";
+import { List, Skeleton } from "@mui/material";
 import DisplayProfile from "./DisplayProfile";
 import ky from "ky";
 
