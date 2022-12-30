@@ -97,8 +97,8 @@ const CreateNewUser = ({ open, setOpen }) => {
               error={dob === "" && touchedFields.dob}
               sx={{ px: 2 }}
               id="dob"
-              type="text"
-              //type="date"
+              // type="text"
+              type="date"
               name="dob"
               value={dob}
               aria-describedby="Date of Birth"
@@ -459,7 +459,8 @@ const CreateNewUser = ({ open, setOpen }) => {
 
     try {
       const response = await ky
-        .post(`https://athletes.onrender.com/api/athletes`, {
+        // .post(`https://athletes.onrender.com/api/athletes`,
+        .post(`http://localhost:4000/api/athletes`, {
           body: formData,
         })
         .json();

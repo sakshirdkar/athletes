@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   Avatar,
   ListItem,
@@ -12,9 +12,22 @@ import {
   Button,
   CardMedia,
 } from "@mui/material";
+import ListProfiles from "./ListProfiles";
 
 const DisplayProfile = ({ profile }) => {
   const [openProfile, setOpenProfile] = useState(false);
+  const [sportsList, setSportsList] = useState([]);
+
+  useEffect(() => {
+    const sportsTemp = [];
+    if (profile) {
+      console.log(profile.sports);
+      for (let sport of profile?.sports) {
+        sportsTemp.push(sport?.name);
+      }
+      setSportsList(sportsTemp);
+    }
+  }, []);
 
   return openProfile ? (
     <Card
@@ -56,7 +69,7 @@ const DisplayProfile = ({ profile }) => {
           About : {profile?.about}
         </Typography>
         <Typography variant="body2" component="div">
-          Sports : {profile?.sports?.join(",")}
+          Sports : {sportsList.join(",")}
         </Typography>
         <Typography variant="body2" component="div">
           Interests : {profile?.interests}
@@ -79,7 +92,11 @@ const DisplayProfile = ({ profile }) => {
           />
         </ListItemAvatar>
         <ListItemText id={profile.name} primary={profile.name} />
-        <ListItemText id={profile.team} primary={`Team : ${profile.team}`} />
+        <ListItemText
+          sx={{ textAlign: "right" }}
+          id={profile.team}
+          primary={`Team : ${profile.team}`}
+        />
       </ListItemButton>
     </ListItem>
   );

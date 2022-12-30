@@ -94,7 +94,7 @@ router.post(
 router.get(
   "/",
   wrapAsync(async (req, res) => {
-    const athletes = await Athlete.find().populate("profileImage");
+    const athletes = await Athlete.find().populate("profileImage sports");
     return res.status(200).json(athletes);
   })
 );
