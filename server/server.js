@@ -16,7 +16,7 @@ app.use(
   cors({
     origin: [
       "http://localhost:3000",
-      "https://main--starlit-kelpie-218fc8.netlify.app/",
+      "https://main--starlit-kelpie-218fc8.netlify.app",
     ],
     credentials: true,
   })
