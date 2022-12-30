@@ -9,8 +9,8 @@ const ListProfiles = () => {
 
   const fetchData = async () => {
     const response = await ky
-      .get("http://localhost:4000/api/athletes")
-      // .get("https://athletes.onrender.com/api/athletes")
+      // .get("http://localhost:4000/api/athletes")
+      .get("https://athletes.onrender.com/api/athletes")
       .json();
     setProfileData(response);
     setLoading(false);
