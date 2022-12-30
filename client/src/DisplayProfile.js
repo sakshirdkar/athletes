@@ -12,7 +12,6 @@ import {
   Button,
   CardMedia,
 } from "@mui/material";
-import ListProfiles from "./ListProfiles";
 
 const DisplayProfile = ({ profile }) => {
   const [openProfile, setOpenProfile] = useState(false);
@@ -27,7 +26,7 @@ const DisplayProfile = ({ profile }) => {
       }
       setSportsList(sportsTemp);
     }
-  }, []);
+  }, [profile]);
 
   return openProfile ? (
     <Card
